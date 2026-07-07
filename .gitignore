@@ -1,0 +1,25 @@
+# Mengabaikan file konfigurasi editor (seperti VS Code)
+.vscode/
+
+# Mengabaikan file sampah dari Sistem Operasi
+.DS_Store
+Thumbs.db
+
+# ---------------------------------------------
+# PERSIAPAN UNTUK FASE BACKEND & DATABASE NANTI
+# ---------------------------------------------
+
+# Mengabaikan file konfigurasi rahasia (sangat penting!)
+.env
+
+# Mengabaikan file database SQLite (agar data login tidak bocor ke publik)
+*.db
+*.sqlite
+*.sqlite3
+
+# Mengabaikan file hasil kompilasi Golang (karena ukurannya besar)
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
