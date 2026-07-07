@@ -1,0 +1,56 @@
+
+        .container {
+            position: relative;
+            width: 50;
+        }
+
+        .image {
+            opacity: 1;
+            box-shadow: inset;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 25%;
+            height: auto;
+            transition: .5s ease;
+            backface-visibility: hidden;
+        }
+
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%,-50%)
+        }
+
+        .container:hover .image {
+            opacity: 0.3;
+        }
+        .container:hover .middle{
+            opacity: 1;
+        }
+
+        .button {
+            background-color: rgb(3, 114, 3);
+            color: white;
+            font-size: 16px;
+            padding: 16px 32px;
+        }
+
+        body {
+            background-color: blanchedalmond;
+        }
+
+        h1 {
+            text-align: center;
+            size: 6px;
+            color: slategrey;
+            text-shadow: 3px;
+        }
+
+        p{
+            text-align: center;
+        }
