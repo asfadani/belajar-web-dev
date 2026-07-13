@@ -22,8 +22,8 @@ func main() {
 	http.HandleFunc("/login", func(w http.ResponseWriter, r *http.Request) {
 		// Keamanan CROS (agar front end 5500 bisa mengirim data ke backend 3000)
 		w.Header().Set("Access-Control-Allow-Origin", "*")
-		w.Header().Set("Access-Control-Allow-Origin", "POST, OPTIONS")
-		w.Header().Set("Access-Control-Allow-Origin", "Content-Type")
+		w.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS")
+		w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 
 		// Pengecekan jalur oleh browser sebelum data asli
 		if r.Method == http.MethodOptions {
