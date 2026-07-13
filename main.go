@@ -8,7 +8,7 @@ import (
 
 type DataLogin struct {
 	Username string `json:"username"`
-	Password string `jaon:"password"`
+	Password string `json:"password"`
 }
 
 func main() {
