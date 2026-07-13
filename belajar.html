@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submit</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px white inset !important;
+            -webkit-text-fill-color: #374151 !important;
+        }
+
+        input::-ms-reveal,
+        input ::-ms-clear {
+            display: none;
+        }
+    </style>
 </head>
 
 <body class="bg-gray-50 h-screen flex items-center justify-center font-sans">
