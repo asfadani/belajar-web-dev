@@ -1,9 +1,12 @@
 package main
 
 import (
+	"database/sql"
 	"encoding/json"
 	"fmt"
 	"net/http"
+
+	_ "github.com/go-sql-driver/mysql"
 )
 
 type DataLogin struct {
@@ -46,15 +49,43 @@ func main() {
 			return
 		}
 
-		// Cetak data yang ditangkap ke terminal
-		fmt.Println("==========================")
-		fmt.Println("Terdaat percobaan login")
-		fmt.Println("Username yang ditangkap:", wadah.Username)
-		fmt.Println("Password yang ditangkap:", wadah.Password)
-		fmt.Println("==========================")
+		// Koneksi ke mariadb
+		db, err := sql.Open("mysql", "root:Asfa1745@tcp(127.0.0.1:3306)/db_belajar_web")
+		if err != nil {
+			http.Error(w, "Server gagal terhubung ke dataase", http.StatusInternalServerError)
+			return
+		}
+		defer db.Close() // Menutup koneks setelah selesai
 
-		// Memberi balasan ke frontend
-		fmt.Fprintf(w, "Data berhasil diproses Golang")
+		// Query untuk cek apakah password cocok
+		var dbUsername string
+		query := "SELECT username FROM users WHERE username = ? AND password = ?"
+
+		// mencari 1 baris data dengan .QueryRow, tanda ? akan diisi secara aman dari data yang ada di wadah
+		err = db.QueryRow(query, wadah.Username, wadah.Password).Scan(&dbUsername)
+
+		if err != nil {
+			// jika erorr == sql.ErrNoRows, artinya data tidak ditemukan di database
+			if err == sql.ErrNoRows {
+				fmt.Fprintf(w, "GAGAL : Username atau Password salah")
+			} else {
+				fmt.Fprintf(w, "ERROR sistem : %s", err.Error())
+			}
+			return
+		}
+
+		// username dan pw cocok jika lolos if else nya
+		fmt.Fprintf(w, "SUKSES : Selamat datang %s!", dbUsername)
+
+		// // Cetak data yang ditangkap ke terminal
+		// fmt.Println("==========================")
+		// fmt.Println("Terdaat percobaan login")
+		// fmt.Println("Username yang ditangkap:", wadah.Username)
+		// fmt.Println("Password yang ditangkap:", wadah.Password)
+		// fmt.Println("==========================")
+
+		// // Memberi balasan ke frontend
+		// fmt.Fprintf(w, "Data berhasil diproses Golang")
 	})
 
 	// 3. Kode yang stadnby menunggu request
