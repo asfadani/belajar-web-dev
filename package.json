@@ -1,0 +1,25 @@
+{
+  "name": "belajar-web-dev",
+  "version": "1.0.0",
+  "description": "Repositori ini adalah *sandbox* (tempat uji coba) untuk mempelajari fundamental pengembangan web sebelum membangun *landing page* utama.",
+  "main": "belajar.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asfadani/belajar-web-dev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/asfadani/belajar-web-dev/issues"
+  },
+  "homepage": "https://github.com/asfadani/belajar-web-dev#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}
