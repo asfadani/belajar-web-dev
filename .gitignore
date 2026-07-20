@@ -23,3 +23,44 @@ Thumbs.db
 *.dll
 *.so
 *.dylib
+
+# 1. Kumpulan Mesin & Library (Paling Berat)
+node_modules/
+
+# 2. File Catatan Error/Log (Sampah Terminal)
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# 3. File Rahasia / Kata Sandi (SANGAT PENTING!)
+# Jangan pernah meng-upload file yang berisi password database atau API Key
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# 4. Pengaturan Editor Code (Bawaan VS Code, dll)
+# Agar settingan VS Code di laptopmu tidak menimpa settingan laptop orang lain
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# 5. File Sampah Bawaan Sistem Operasi (Windows / Mac)
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# =======================================================
+# 6. Folder Hasil Compile Tailwind (Bagian Opsional)
+# =======================================================
+# dist/
