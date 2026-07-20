@@ -28,7 +28,13 @@ formLogin.addEventListener('submit', function (event) {
     })
         .then(response => response.text()) // Menerima balasan dari GO 
         .then(hasil => {
-            alert("Pesan dari server: " + hasil);
+            if (hasil.startsWith("SUKSES")) {
+                alert("Berhasil masuk!");
+                window.location.href = "index.html";
+            } else {
+                alert(hasil);
+            }
+            // alert("Pesan dari server: " + hasil);
         })
         .catch(error => {
             // Yang ditampilkan jika derver ,ati
