@@ -1,0 +1,214 @@
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TM Coffee Slowbar</title>
+    <link rel="icon" type="image/png" href="./aset/logo tm.png">
+    <link href="../dist/output.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Ikon untuk Hamburger Menu -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-white">
+    <section id="hero"
+        class="bg-white relative h-screen flex flex-col justify-center items-center w-full px-4 fade-in-section opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+        <div class="z-10 flex flex-col items-center gap-10 w-full max-w-4xl">
+
+            <!-- Area Logo -->
+            <div class="flex flex-col items-center text-center">
+                <!-- INI SOLUSI UNTUK GAMBAR KEBESARAN: w-32 (lebar di mobile), md:w-48 (lebar di desktop) -->
+                <img src="./aset/logo tm.png" alt="Logo TM Coffee" class="w-32 md:w-48 h-auto object-contain mb-4">
+
+                <h1 class="text-3xl text-blue-600 md:text-5xl font-bold tracking-[0.2em] uppercase">
+                    TM COFFEE
+                    <span
+                        class="text-blue-600 block text-lg md:text-2xl font-light tracking-[0.4em] mt-2">Slowbar</span>
+                </h1>
+            </div>
+
+            <!-- Menu Tengah Bawah Logo (Hero Nav) -->
+            <ul class="flex flex-col md:flex-row gap-4 md:gap-10 text-center">
+                <li><a href="#about"
+                        class="inline-block font-semibold text-kopi-text text-blue-600 hover:text-kopi-aksen hover:scale-110 transition-all duration-300">About
+                        Us</a></li>
+                <li><a href="#gallery"
+                        class="inline-block font-semibold text-kopi-text text-blue-600 hover:text-kopi-aksen hover:scale-110 transition-all duration-300">Gallery</a>
+                </li>
+                <li><a href="#contact"
+                        class="inline-block font-semibold text-kopi-text text-blue-600 hover:text-kopi-aksen hover:scale-110 transition-all duration-300">Contact
+                        Us</a></li>
+            </ul>
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+            <h2 class="text-blue-600 text-xl mt-8">#letcoffeeconnectus!</h2>
+        </div>
+
+        <!-- Panah Indikator Scroll Bawah -->
+        <div class="absolute bottom-10 animate-bounce">
+            <i class="fa-solid fa-chevron-down text-blue-600 text-kopi-text"></i>
+        </div>
+    </section>
+
+    <nav id="navbar"
+        class="fixed top-0 left-0 w-full px-6 py-4 bg-white backdrop-blur-sm shadow-md flex justify-between items-center z-50 transition-transform duration-500 ease-in-out -translate-y-full">
+
+        <!-- Navbar Kiri: Logo Kecil & Teks -->
+        <a href="#hero" class="flex items-center gap-3">
+            <img src="./aset/logo tm.png" alt="Logo Kecil" class="w-10 h-10 object-contain">
+            <div class="flex flex-col text-blue-600 tracking-widest uppercase">
+                <span class="font-semibold text-sm md:text-base leading-none mb-0.5">TM Coffee</span>
+                <span class="font-light text-sm md:text-base leading-none">Slowbar</span>
+            </div>
+        </a>
+
+        <!-- Tombol Hamburger Menu (Hanya tampil di Mobile) -->
+        <button id="mobile-menu-btn" class="md:hidden text-blue-600 text-2xl text-kopi-text focus:outline-none z-[60]">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Navbar Kanan: Link Menu -->
+        <!-- Di Mobile: Muncul dari kanan sebagai sidebar (translate-x-full ke translate-x-0) -->
+        <!-- Di Desktop (md:): Tampil berjejer di kanan (flex-row) -->
+        <ul id="nav-links"
+            class="fixed top-0 right-0 h-screen w-64 bg-white shadow-2xl flex flex-col items-center pt-24 gap-8 transition-transform duration-300 translate-x-full z-50 md:static md:translate-x-0 md:h-auto md:w-auto md:bg-transparent md:shadow-none md:flex-row md:pt-0">
+            <li><a href="#about"
+                    class="inline-block font-semibold text-kopi-text text-blue-600 hover:text-kopi-aksen hover:scale-110 transition-all duration-300">About
+                    Us</a></li>
+            <li><a href="#gallery"
+                    class="inline-block font-semibold text-kopi-text text-blue-600 hover:text-kopi-aksen hover:scale-110 transition-all duration-300">Gallery</a>
+            </li>
+            <li><a href="#contact"
+                    class="inline-block font-semibold text-kopi-text text-blue-600 hover:text-kopi-aksen hover:scale-110 transition-all duration-300">Contact
+                    Us</a></li>
+
+            <li class="absolute bottom-10 left-0 w-full text-center md:hidden">
+                <p class="text-blue-600">letcoffeeconnectus!</p>
+            </li>
+        </ul>
+    </nav>
+
+    <section id="about"
+        class="fade-in-section opacity-0 translate-y-10 transition-all duration-1000 ease-out pt-24 pb-32 md:pt-16 md:pb-40 px-6 flex flex-col items-center bg-blue-600 text-white">
+        <h2
+            class="text-3xl md:text-4xl font-bold mb-4 after:content-[''] after:block after:w-16 after:h-1 after:bg-white after:mx-auto after:mt-4">
+            About Us</h2>
+        <p class="max-w-3xl text-center text-lg mt-8 opacity-90 leading-relaxed">
+            TM Coffee Slowbar lahir untuk merayakan pelannya waktu. Di tengah sejuknya udara luar, kami menyajikan kopi dengan  kehangatan, dan tanpa basa-basi. Silakan duduk, santai, dan nikmati prosesnya.
+        </p>
+    </section>
+
+    <section id="gallery"
+        class="pt-32 pb-24 px-4 md:px-6 flex flex-col items-center bg-white w-full max-w-7xl mx-auto fade-in-section opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+        <!-- Judul Gallery (Tetap selaras dengan tema website) -->
+        <h2
+            class="text-blue-600 text-3xl md:text-4xl font-bold mb-10 after:content-[''] after:block after:w-16 after:h-1 after:bg-blue-600 after:mx-auto after:mt-4">
+            Gallery</h2>
+
+        <!-- Gallery Wrapper -->
+        <!-- flex-col untuk HP, md:flex-row untuk Laptop, h-[70vh] untuk tinggi area -->
+        <div
+            class="flex flex-col md:flex-row w-full h-[80vh] md:h-[70vh] rounded-2xl overflow-hidden shadow-2xl gap-1 bg-white">
+
+            <!-- Item 1 -->
+            <!-- flex-1 (ukuran dasar), duration-[800ms] (lama transisi), hover:flex-[7] (ukuran saat disorot) -->
+            <div class="flex-1 h-full bg-center bg-cover bg-no-repeat transition-all duration-[800ms] ease-in-out hover:flex-[7] cursor-pointer"
+                style="background-image: url('./aset/gambar2.jpeg');">
+            </div>
+
+            <!-- Item 2 -->
+            <div class="flex-1 h-full bg-center bg-cover bg-no-repeat transition-all duration-[800ms] ease-in-out hover:flex-[7] cursor-pointer"
+                style="background-image: url('./aset/gambar1.jpeg');">
+            </div>
+
+            <!-- Item 3 -->
+            <div class="flex-1 h-full bg-center bg-cover bg-no-repeat transition-all duration-[800ms] ease-in-out hover:flex-[7] cursor-pointer"
+                style="background-image: url('./aset/gambar5.jpeg');">
+            </div>
+
+            <!-- Item 4 -->
+            <div class="flex-1 h-full bg-center bg-cover bg-no-repeat transition-all duration-[800ms] ease-in-out hover:flex-[7] cursor-pointer"
+                style="background-image: url('./aset/gambar3.jpeg');">
+            </div>
+
+            <!-- Item 5 -->
+            <div class="flex-1 h-full bg-center bg-cover bg-no-repeat transition-all duration-[800ms] ease-in-out hover:flex-[7] cursor-pointer"
+                style="background-image: url('./aset/gambar4.jpeg');">
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact"
+        class="fade-in-section opacity-0 translate-y-10 transition-all duration-1000 ease-out py-20 px-6 bg-blue-600">
+        <div class="max-w-6xl mx-auto">
+            <!-- Judul Section -->
+            <h2
+                class="text-3xl md:text-4xl font-bold text-center mb-16 after:content-[''] after:block after:w-16 after:h-1 after:bg-white after:mx-auto after:mt-4 text-white">
+                Contact Us</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+                <!-- Kiri: Info Kontak -->
+                <div class="space-y-8">
+                    <h3 class="text-2xl font-semibold text-white mb-6 -pl-4">Hubungi Kami</h3>
+
+                    <a href="https://wa.me/6285934405716"
+                        class="flex items-center gap-4 text-white hover:text-blue-800 transition-colors ml-1">
+                        <i class="fa-brands fa-whatsapp text-2xl text-white hover:text-blue-800 transition-colors"></i>
+                        <span class="pl-1">Admin 1</span>
+                    </a>
+
+                    <a href="https://wa.me/6285727605532"
+                        class="flex items-center gap-4 text-white hover:text-blue-800 transition-colors ml-1">
+                        <i class="fa-brands fa-whatsapp text-2xl text-white hover:text-blue-800 transition-colors"></i>
+                        <span class="pl-1">Admin 2</span>
+                    </a>
+                    <a href="mailto:tmcoffee.id@gmail.com"
+                        class="flex items-center gap-4 text-white hover:text-blue-800 transition-colors ml-1">
+                        <i class="fa-solid fa-envelope text-2xl text-white hover:text-blue-800 transition-colors"></i>
+                        <span>tmcoffee.id@gmail.com</span>
+                    </a>
+
+                    <div class="flex items-start gap-4 text-white">
+                        <i class="fa-solid fa-location-dot text-2xl text-white ml-1"></i>
+                        <span class="pl-1">J886+929, Purwogondo, Sumurarum, Kec. Grabag, Kabupaten Magelang, Jawa Tengah 56196</span>
+                    </div>
+
+                    <!-- Media Sosial -->
+                    <div class="pt-6">
+                        <h4 class="font-semibold mb-4 text-white">Media Sosial Kami</h4>
+                        <div class="flex gap-6 text-2xl ml-1">
+                            <a href="https://www.instagram.com/tmcoffeeslowbar?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                                class="hover:transition-all hover:scale-110"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/share/1AqcPNCVDa/"
+                                class="hover:transition-all hover:scale-110"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="https://www.tiktok.com/@tm.coffeeslowbar?is_from_webapp=1&sender_device=pc"
+                                class="transition-all hover:scale-110"><i class="fa-brands fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kanan: Google Maps -->
+                <div class="w-full h-80 rounded-2xl overflow-hidden shadow-lg">
+                    <!-- Ganti src di bawah ini dengan Embed URL Google Maps Anda -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.7303169351503!2d110.3101212!3d-7.3840894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a81e2c91cf121%3A0x75c6d68ef93ac6fd!2sTM%20COFFEE%20SLOW%20BAR!5e0!3m2!1sid!2sid!4v1785665321228!5m2!1sid!2sid"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="./js/animasi.js"></script>
+</body>
+
+</html>

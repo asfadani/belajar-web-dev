@@ -1,3 +1,339 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+a {
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.player {
+    box-shadow: 0 2px 4px -4px rgba(0, 0, 0, 0.4), 0 50px 45px -20px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    height: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    width: 400px;
+}
+
+.player__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.player__content-top {
+    padding: 30px 20px;
+}
+
+.player__content-bottom {
+    margin-top: auto;
+    padding: 0 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.3);
+    position: relative;
+}
+
+.player__top-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.player__meta {
+    box-sizing: border-box;
+    font-size: 24px;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4);
+    top: 0;
+    width: 100%;
+}
+
+.player__artist {
+    font-weight: 300;
+}
+
+.player__bg {
+    background-position: bottom center;
+    background-size: cover;
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.player__bg:before,
+.player__bg:after {
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+.player__bg:after {
+    background: linear-gradient(to top, #000, #fff);
+    opacity: .2;
+    mix-blend-mode: soft-light;
+}
+
+.player__controls {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player__controls:before,
+.player__controls:after {
+    content: '';
+    height: 100%;
+    display: block;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.player__controls:before {
+    box-shadow: 0 -5px 30px 5px rgba(0, 0, 0, 0.6);
+    mix-blend-mode: soft-light;
+}
+
+.player__controls-bg {
+    background-position: bottom center;
+    background-size: cover;
+    height: 100%;
+    filter: blur(30px);
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.player__controls-bg:before {
+    background: linear-gradient(to top, #000, #fff);
+    content: '';
+    display: block;
+    height: 100%;
+    opacity: .08;
+    mix-blend-mode: soft-light;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.player__play,
+.player__prev,
+.player__next {
+    background: rgba(255, 255, 255, 0.01);
+    border-radius: 60px;
+    box-shadow: 0 -2px 4px 0 rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    position: relative;
+    transition: background 0.15s linear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+
+.player__play .player__icon,
+.player__prev .player__icon,
+.player__next .player__icon {
+    transition: transform 0.05s linear;
+}
+
+.player__play:before,
+.player__play:after,
+.player__prev:before,
+.player__prev:after,
+.player__next:before,
+.player__next:after {
+    border-radius: 60px;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.player__play:before,
+.player__prev:before,
+.player__next:before {
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.04));
+    box-shadow: 0 -1px 1px 0 rgba(255, 255, 255, 0.6);
+    mix-blend-mode: overlay;
+}
+
+.player__play:after,
+.player__prev:after,
+.player__next:after {
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.6);
+    mix-blend-mode: soft-light;
+}
+
+.player__play:hover,
+.player__prev:hover,
+.player__next:hover {
+    background: radial-gradient(ellipse at center, rgba(12, 11, 23, 0.4) 0%, rgba(86, 76, 132, 0.1) 60%, rgba(255, 255, 255, 0.2) 100%);
+}
+
+.player__play:hover .player__icon,
+.player__prev:hover .player__icon,
+.player__next:hover .player__icon {
+    transform: scale(0.9);
+}
+
+.player__play {
+    height: 60px;
+    width: 60px;
+}
+
+.player__prev,
+.player__next {
+    height: 40px;
+    width: 40px;
+}
+
+.player__icon {
+    color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    position: relative;
+    width: 1.4em;
+}
+
+.player__icon:before {
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.player__icon-play {
+    font-size: 30px;
+    width: 1.2em;
+}
+
+.player__icon-prev,
+.player__icon-next {
+    width: 1.4em;
+}
+
+.player__repeat {
+    width: 1.4em;
+    margin-right: auto;
+}
+
+.player__shuffle {
+    width: 2em;
+    margin-left: auto;
+}
+
+.player__repeat,
+.player__shuffle {
+    color: #1A0C1D;
+    height: 1.2em;
+    font-size: 30px;
+}
+
+.player__list {
+    height: 1.2em;
+    font-size: 20px;
+    width: 1.4em;
+    z-index: 1;
+}
+
+.player__volume {
+    height: 1.2em;
+    font-size: 26px;
+    width: 1.4em;
+    z-index: 1;
+}
+
+.upwork {
+    color: #14A800;
+}
+
+.socials {
+    text-align: center;
+    display: block;
+    font-size: 14px;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.socials li {
+    display: inline;
+}
+
+.socials li:not(:last-child) {
+    margin-right: .75em;
+}
+
+.socials li a {
+    font-weight: 500;
+    color: black;
+    display: inline-flex;
+    align-items: center;
+}
+
+.socials li a:hover img {
+    animation: link 0.5s;
+}
+
+.socials li a img {
+    width: 1.3em;
+    object-fit: contain;
+    object-position: center;
+    margin-right: 0.5em;
+}
+
+.credits {
+    font-size: 0.8em;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.love {
+    background: url(https://cdn.odintsov.me/images/heart-smil.svg);
+    display: inline-block;
+    height: 16px;
+    vertical-align: middle;
+    width: 16px;
+}
+
+/* --- ANIMASI BACKGROUND GRADASI --- */
+@keyframes gerakGradasi {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.bg-animasi {
+    background-size: 400% 400%;
+    animation: gerakGradasi 10s ease infinite;
+}
