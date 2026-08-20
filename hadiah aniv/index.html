@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanggal Jadian</title>
+
+    <!-- 1. Hubungkan dengan CSS Tailwind milikmu -->
+    <link href="../dist/output.css" rel="stylesheet">
+
+    <!-- 2. TEMPEL LINK FONT DI SINI -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-black">
+    <div id="bg-animasi" class="fixed inset-0 z-[-1] bg-black overflow-hidden pointer-events-none"></div>
+    <!-- 3. TEMPEL KODE UTAMA DI SINI -->
+    <div class="container relative justify-center flex">
+        <form
+            class="relative isolate w-[90%] max-w-md mx-auto flex flex-col items-center text-center overflow-hidden rounded-[28px] bg-[rgba(255,255,255,0.13)]
+            px-6 py-8 sm:px-8 sm:py-10 gap-4
+            backdrop-blur-[18px] backdrop-saturate-[188%] backdrop-contrast-[108%]
+            border border-white/[0.26]
+            shadow-[0_20px_70px_rgba(0,0,0,0.114),inset_0_1px_0.5px_rgba(255,255,255,0.446),inset_0_2px_5px_rgba(255,255,255,0.167),inset_0_-12px_22px_rgba(0,0,0,0.086)]
+            before:content-[''] before:pointer-events-none before:absolute before:inset-0 before:z-[2] before:rounded-[inherit] before:mix-blend-screen
+            before:bg-[radial-gradient(120%_80%_at_0%_0%,rgba(255,255,255,0.243)_0%,transparent_42%),radial-gradient(120%_80%_at_100%_0%,rgba(255,255,255,0.182)_0%,transparent_42%),linear-gradient(155deg,rgba(255,255,255,0.319)_0%,rgba(255,255,255,0.061)_17%,transparent_46%)]
+            after:content-[''] after:pointer-events-none after:absolute after:inset-0 after:z-[2] after:rounded-[inherit]
+            after:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.072)]
+            after:bg-[linear-gradient(to_top,rgba(255,255,255,0.058)_0%,transparent_30%),radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.029)_0%,transparent_46%)] text-slate-900">
+
+            <!-- Judul Rata Tengah -->
+            <p class="text-2xl font-['Playfair_Display'] text-pink-800 relative z-10 w-full">anniversary date</p>
+
+            <!-- Input Tanggal (Diperlebar dan teks di tengah) -->
+            <input id="tanggal-jadian" type="text" placeholder="Masukkan Tanggal..." onfocus="(this.type='date')"
+                onblur="(this.value == '' ? this.type='text' : this.type='date')"
+                class="px-4 py-3 rounded-full outline-none focus:ring-2 focus:ring-pink-300 bg-white/50 text-pink-700 placeholder-pink-700 text-center relative z-10">
+
+            <!-- Tombol Submit (Diperbaiki padding dan lebarnya) -->
+            <input id="btn-submit"
+                class="bg-pink-500 hover:bg-pink-600 text-white py-2 px-10 rounded-full cursor-pointer transition-colors relative z-10 w-full max-w-[200px]"
+                type="button" value="Submit">
+        </form>
+
+        <!-- 4. Hubungkan dengan JavaScript-mu -->
+        <script src="./js/submit.js"></script>
+        <!-- ========================================== -->
+        <!-- CUSTOM ALERT (Tersenyembunyi di awal) -->
+        <!-- ========================================== -->
+        <div id="custom-alert"
+            class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 hidden">
+
+            <!-- Kotak Popup Glassmorphism -->
+            <div id="alert-box"
+                class="bg-white/10 border border-pink-500/30 p-8 rounded-2xl shadow-[0_0_30px_rgba(236,72,153,0.3)] text-center max-w-sm w-full mx-4 transform scale-90 transition-transform duration-300 backdrop-blur-md">
+
+                <!-- Ikon Hati Retak (Bisa diganti font-awesome lain) -->
+                <i class="fa-solid fa-heart-crack text-pink-500 text-5xl mb-4 animate-bounce"></i>
+
+                <h3 class="text-white text-2xl font-['Playfair_Display'] italic mb-2">Ups! Salah Tanggal</h3>
+
+                <!-- Teks Pesan -->
+                <p id="alert-message" class="text-gray-300 mb-6 font-sans">Masa lupa tanggal jadian kita?</p>
+
+                <!-- Tombol Tutup -->
+                <button onclick="tutupAlert()"
+                    class="px-6 py-2 bg-pink-500 hover:bg-pink-600 text-white rounded-full font-bold transition transform hover:scale-105 shadow-lg">
+                    Coba Lagi
+                </button>
+            </div>
+
+        </div>
+</body>
+
+</html>

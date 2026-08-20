@@ -1,0 +1,401 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../dist/output.css" rel="stylesheet">
+
+    <!-- 2. TEMPEL LINK FONT DI SINI -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Tempelkan baris ini sebelum tag penutup </head> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Tulisan Tangan -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="bg-animasi" class="fixed inset-0 z-[-1] bg-black overflow-hidden pointer-events-none"></div>
+
+    <section id="layar-awal" class="h-screen flex items-center justify-center">
+        <h1 h1 id="teks-animasi"
+            class="font-['Playfair_Display'] italic text-5xl md:text-7xl text-red-800 text-center h-20"></h1>
+    </section>
+
+    <section class="min-h-screen flex items-center justify-center py-20">
+        <div id="kotak-player" class="player opacity-0 translate-y-20 transition-all duration-[1500ms] ease-out">
+            <div class="player__bg" style="background-image: url('./asets/OIP (1).webp');">
+            </div>
+            <div class="player__content">
+
+                <!-- Bagian Atas Player -->
+                <div class="player__content-top relative z-10">
+
+                    <!-- Margin negatif saya hapus, diganti mt-2 agar jarak dengan tombol atasnya pas -->
+                    <div
+                        class="player__meta bg-white/20 backdrop-blur-md rounded-2xl py-3 px-4 border border-white/30 shadow-lg mt-0 mx-0 w-auto">
+                        <div class="player__song font-bold text-gray-900 text-lg">OPUS</div>
+                        <div class="player__artist text-gray-800 text-sm">FSTVLST — II</div>
+                    </div>
+                </div>
+
+                <!-- Bagian Bawah Player (Tombol Kontrol) -->
+                <div class="player__content-bottom relative z-10">
+                    <!-- Tambahan px-4 agar ikon tidak terlalu menempel ke pinggir -->
+                    <div class="player__controls px-4">
+                        <div class="player__controls-bg" style="background-image: url('./asets/OIP (1).webp');"></div>
+
+                        <!-- PASTIKAN ADA id="btn-play" DI SINI -->
+                        <div id="btn-play" class="player__play flex items-center justify-center cursor-pointer">
+                            <!-- PASTIKAN ADA id="icon-play" DI SINI -->
+                            <i id="icon-play" class="fa-solid fa-play text-2xl text-gray-800 ml-1"></i>
+                        </div>
+
+                        <div id="youtube-audio" class="hidden"></div>
+
+                        <!-- 3. TAMBAHKAN script resmi YouTube ini tepat DI ATAS script animasimu -->
+                        <script src="https://www.youtube.com/iframe_api"></script>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="section-kolase" class="relative w-full min-h-screen overflow-hidden flex items-center justify-center"
+        style="-webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%); mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);">
+
+        <!-- Pembungkus Utama (Dimiringkan dan diperbesar agar menutupi layar) -->
+        <div class="absolute flex flex-col gap-4 opacity-40 transform -rotate-12 scale-[1.3] w-[200vw] -left-[50vw]">
+
+            <!-- Baris 1: Gerak Kanan -->
+            <div id="baris-1" class="flex gap-4 w-full justify-center transition-transform duration-75 ease-out">
+                <img src="./asets/foto_1.jpeg"
+                    class="w-40 md:w-64 h-40 md:h-64 object-cover rounded-md shadow-lg flex-shrink-0">
+                <img src="./asets/foto_2.jpeg"
+                    class="w-40 md:w-64 h-40 md:h-64 object-cover rounded-md shadow-lg flex-shrink-0">
+                <img src="./asets/foto_3.jpeg"
+                    class="w-40 md:w-64 h-40 md:h-64 object-cover rounded-md shadow-lg flex-shrink-0">
+                <img src="./asets/foto_4.jpeg"
+                    class="w-40 md:w-64 h-40 md:h-64 object-cover rounded-md shadow-lg flex-shrink-0">
+                <img src="./asets/foto_5.jpeg"
+                    class="w-40 md:w-64 h-40 md:h-64 object-cover rounded-md shadow-lg flex-shrink-0">
+            </div>
+
+            <!-- Baris 2: Gerak Kiri (Diberi margin agar posisinya zig-zag dari baris 1) -->
+            <div id="baris-2"
+                class="flex gap-4 w-full justify-center -ml-[10vw] transition-transform duration-75 ease-out">
+                <img src="./asets/foto_6.jpeg"
+                    class="w-40 md:w-64 h-40 md:h-64 object-cover rounded-md shadow-lg flex-shrink-0">
+                <img src="./asets/foto_7.jpeg"
+                    class="w-40 md:w-64 h-40 md:h-64 object-cover rounded-md shadow-lg flex-shrink-0">
+                <img src="./asets/foto_8.jpeg"
+                    class="w-40 md:w-64 h-40 md:h-64 object-cover rounded-md shadow-lg flex-shrink-0">
+                <img src="./asets/foto_9.jpeg"
+                    class="w-40 md:w-64 h-40 md:h-64 object-cover rounded-md shadow-lg flex-shrink-0">
+                <img src="./asets/foto_10.jpeg"
+                    class="w-40 md:w-64 h-40 md:h-64 object-cover rounded-md shadow-lg flex-shrink-0">
+            </div>
+
+            <!-- Baris 3: Gerak Kanan -->
+            <div id="baris-3" class="flex gap-4 w-full justify-center transition-transform duration-75 ease-out">
+                <img src="./asets/video_1.mp4"
+                    class="w-40 md:w-64 h-40 md:h-64 object-cover rounded-md shadow-lg flex-shrink-0">
+                <img src="./asets/video_2.mp4"
+                    class="w-40 md:w-64 h-40 md:h-64 object-cover rounded-md shadow-lg flex-shrink-0">
+                <img src="./asets/foto_1.jpeg"
+                    class="w-40 md:w-64 h-40 md:h-64 object-cover rounded-md shadow-lg flex-shrink-0">
+                <img src="./asets/foto_2.jpeg"
+                    class="w-40 md:w-64 h-40 md:h-64 object-cover rounded-md shadow-lg flex-shrink-0">
+                <img src="./asets/foto_3.jpeg"
+                    class="w-40 md:w-64 h-40 md:h-64 object-cover rounded-md shadow-lg flex-shrink-0">
+            </div>
+
+        </div>
+
+        <!-- Efek Gradien Hitam (Sama seperti sebelumnya) -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/80"></div>
+
+        <!-- Teks Utama di Tengah (Dikosongkan untuk diisi JavaScript) -->
+        <div class="relative z-10 text-center px-4">
+            <!-- Tambahkan id="teks-kolase" dan biarkan isinya KOSONG -->
+            <!-- Tambahkan min-h-[150px] agar layout tidak lompat-lompat saat ngetik -->
+            <h1 id="teks-kolase"
+                class="font-['Playfair_Display'] text-white text-5xl md:text-7xl leading-tight italic min-h-[100px] md:min-h-[150px]">
+            </h1>
+        </div>
+    </section>
+
+    <section id="section-narasi" class="relative w-full min-h-[80vh] flex items-center justify-center px-6 py-24">
+
+        <!-- Wadah teks (max-w-3xl agar teks tidak terlalu melebar ke samping) -->
+        <!-- opacity-0 dan translate-y-10 adalah posisi awal sebelum di-scroll (menghilang dan agak ke bawah) -->
+        <div id="teks-narasi"
+            class="relative z-10 max-w-3xl text-center opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+
+            <!-- Teks paragraf (menggunakan font Playfair Display agar serasi) -->
+            <p
+                class="font-['Playfair_Display'] text-gray-200 text-md md:text-3xl leading-relaxed italic md:leading-loose">
+                "Tak terasa, sudah 2 tahun hubungan kita berjalan. Banyak momen sedih, bahagia, takut, cemas kita lewati
+                dan ciptakan.
+                Semoga kita masih tetap selalu bersama sampai bertemu anniversary ke-3 kita dan anniversary selanjutnya.
+                Semoga kita dapat membuat lebih banyak momen bahagia dan tinggalkan segala keburukan yang kita lalui
+                bersama di tahun sebelum sebelumnya.
+                Love you so much Nurma...."
+            </p>
+
+            <!-- Tanda tangan / Nama panggilan (Opsional) -->
+            <div class="mt-8 text-pink-400 font-['Playfair_Display'] text-lg md:text-xl">
+                — Asfa
+            </div>
+        </div>
+    </section>
+
+    <section id="section-momen"
+        class="relative w-full min-h-screen flex flex-col items-center justify-center px-6 py-20 z-10">
+
+        <!-- Judul Animasi -->
+        <h2 id="judul-momen"
+            class="font-['Playfair_Display'] text-white text-3xl md:text-5xl italic mb-16 text-center opacity-0 translate-y-10 transition-all duration-1000">
+            <span
+                class="inline-block transition-all duration-300 hover:text-pink-400 hover:scale-125 hover:-translate-y-1">Momen</span>
+            <span
+                class="inline-block transition-all duration-300 hover:text-pink-400 hover:scale-125 hover:-translate-y-1">Terbaik</span>
+            <span
+                class="inline-block transition-all duration-300 hover:text-pink-400 hover:scale-125 hover:-translate-y-1">Selama</span>
+            <span
+                class="inline-block transition-all duration-300 hover:text-pink-400 hover:scale-125 hover:-translate-y-1">2
+                Tahun</span>
+        </h2>
+
+        <!-- Wadah Grid untuk 3 Kartu -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 w-full max-w-5xl">
+
+            <!-- ================= KARTU 1 ================= -->
+            <div class="kartu-container w-full h-[400px]" style="perspective: 1000px;">
+                <!-- Pembungkus 3D (Dimulai dengan posisi terbalik 180 derajat) -->
+                <div class="kartu-inner w-full h-full relative"
+                    style="transform-style: preserve-3d; transition: transform 0.8s ease-in-out; transform: rotateY(180deg);">
+
+                    <!-- SISI DEPAN: FOTO & HOVER -->
+                    <div class="absolute inset-0 w-full h-full rounded-2xl overflow-hidden shadow-[0_0_20px_rgba(0,0,0,0.5)] group"
+                        style="backface-visibility: hidden;">
+                        <!-- Ganti nama file fotonya! -->
+                        <img src="./asets/foto_1.jpeg" class="w-full h-full object-cover">
+
+                        <!-- Overlay Hitam Transparan saat di-Hover -->
+                        <div
+                            class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4">
+                            <p class="font-['Playfair_Display'] text-white text-2xl italic mb-2">Momen indah?</p>
+                            <div class="flex gap-4">
+                                <button
+                                    class="btn-setuju px-5 py-2 bg-pink-500 text-white rounded-full font-bold hover:bg-pink-600 transition hover:scale-105">Setuju</button>
+                                <button
+                                    class="btn-tidak px-5 py-2 bg-gray-500 text-white rounded-full font-bold hover:bg-gray-600 transition hover:scale-105">Tidak</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SISI BELAKANG: MOTIF KARTU REMI -->
+                    <div class="absolute inset-0 w-full h-full rounded-2xl bg-white flex flex-col items-center justify-center border-[8px] border-gray-200"
+                        style="backface-visibility: hidden; transform: rotateY(180deg);">
+                        <!-- Huruf ujung kartu (As Love) -->
+                        <div
+                            class="absolute top-4 left-4 text-pink-500 text-3xl font-bold font-serif leading-none text-center">
+                            N<br>♥</div>
+                        <div
+                            class="absolute bottom-4 right-4 text-pink-500 text-3xl font-bold font-serif leading-none text-center rotate-180">
+                            A<br>♥</div>
+
+                        <!-- Ikon Love Utama di Tengah (Outline) -->
+                        <i class="ikon-love fa-regular fa-heart text-7xl text-pink-300 transition-all duration-500"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= KARTU 2 ================= -->
+            <div class="kartu-container w-full h-[400px]" style="perspective: 1000px;">
+                <div class="kartu-inner w-full h-full relative"
+                    style="transform-style: preserve-3d; transition: transform 0.8s ease-in-out; transform: rotateY(180deg);">
+                    <div class="absolute inset-0 w-full h-full rounded-2xl overflow-hidden shadow-[0_0_20px_rgba(0,0,0,0.5)] group"
+                        style="backface-visibility: hidden;">
+                        <img src="./asets/foto_2.jpeg" class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4">
+                            <p class="font-['Playfair_Display'] text-white text-2xl italic mb-2">Momen indah?</p>
+                            <div class="flex gap-4">
+                                <button
+                                    class="btn-setuju px-5 py-2 bg-pink-500 text-white rounded-full font-bold hover:bg-pink-600 transition hover:scale-105">Setuju</button>
+                                <button
+                                    class="btn-tidak px-5 py-2 bg-gray-500 text-white rounded-full font-bold hover:bg-gray-600 transition hover:scale-105">Tidak</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 w-full h-full rounded-2xl bg-white flex flex-col items-center justify-center border-[8px] border-gray-200"
+                        style="backface-visibility: hidden; transform: rotateY(180deg);">
+                        <div
+                            class="absolute top-4 left-4 text-pink-500 text-3xl font-bold font-serif leading-none text-center">
+                            N<br>♥</div>
+                        <div
+                            class="absolute bottom-4 right-4 text-pink-500 text-3xl font-bold font-serif leading-none text-center rotate-180">
+                            A<br>♥</div>
+                        <i class="ikon-love fa-regular fa-heart text-7xl text-pink-300 transition-all duration-500"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= KARTU 3 ================= -->
+            <div class="kartu-container w-full h-[400px]" style="perspective: 1000px;">
+                <div class="kartu-inner w-full h-full relative"
+                    style="transform-style: preserve-3d; transition: transform 0.8s ease-in-out; transform: rotateY(180deg);">
+                    <div class="absolute inset-0 w-full h-full rounded-2xl overflow-hidden shadow-[0_0_20px_rgba(0,0,0,0.5)] group"
+                        style="backface-visibility: hidden;">
+                        <img src="./asets/foto_3.jpeg" class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4">
+                            <p class="font-['Playfair_Display'] text-white text-2xl italic mb-2">Momen indah?</p>
+                            <div class="flex gap-4">
+                                <button
+                                    class="btn-setuju px-5 py-2 bg-pink-500 text-white rounded-full font-bold hover:bg-pink-600 transition hover:scale-105">Setuju</button>
+                                <button
+                                    class="btn-tidak px-5 py-2 bg-gray-500 text-white rounded-full font-bold hover:bg-gray-600 transition hover:scale-105">Tidak</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 w-full h-full rounded-2xl bg-white flex flex-col items-center justify-center border-[8px] border-gray-200"
+                        style="backface-visibility: hidden; transform: rotateY(180deg);">
+                        <div
+                            class="absolute top-4 left-4 text-pink-500 text-3xl font-bold font-serif leading-none text-center">
+                            N<br>♥</div>
+                        <div
+                            class="absolute bottom-4 right-4 text-pink-500 text-3xl font-bold font-serif leading-none text-center rotate-180">
+                            A<br>♥</div>
+                        <i class="ikon-love fa-regular fa-heart text-7xl text-pink-300 transition-all duration-500"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="section-narasi-2"
+        class="relative w-full min-h-[50vh] flex items-center justify-center px-6 py-24 pz-10">
+        <div id="teks-narasi-2"
+            class="relative z-10 max-w-3xl text-center opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+            <p
+                class="font-['Playfair_Display'] text-gray-200 text-xl md:text-3xl leading-relaxed italic md:leading-loose">
+                "Sedikit rollback momen momen terbaik kita. Semoga di tahun selanjutnya kita bisa menciptakan momen
+                serupa yang lebih banyak jumlahnya.
+                Let's go on an adventure to exciting places and enjoy more delicious food and drinks..!"
+            </p>
+
+        </div>
+    </section>
+
+    <section id="section-video"
+        class="relative w-full min-h-screen flex flex-col items-center justify-center px-6 py-20 z-10">
+
+        <!-- Judul Video -->
+        <h2 id="judul-video"
+            class="font-['Playfair_Display'] text-white text-3xl md:text-5xl italic mb-12 text-center opacity-0 translate-y-10 transition-all duration-1000 cursor-default">
+            <span
+                class="inline-block transition-all duration-300 hover:text-pink-400 hover:scale-125 hover:-translate-y-1">Honorable</span>
+            <span
+                class="inline-block transition-all duration-300 hover:text-pink-400 hover:scale-125 hover:-translate-y-1">Mention</span>
+            <span
+                class="inline-block transition-all duration-300 hover:text-pink-400 hover:scale-125 hover:-translate-y-1">Momen</span>
+            <span
+                class="inline-block transition-all duration-300 hover:text-pink-400 hover:scale-125 hover:-translate-y-1">Terbaik</span>
+        </h2>
+
+        <!-- Bingkai Video Berkilau (Glow) -->
+        <div id="wadah-video"
+            class="relative w-full max-w-4xl p-1 bg-gradient-to-r from-pink-500/50 via-purple-500/50 to-pink-500/50 rounded-2xl opacity-0 translate-y-10 transition-all duration-1000 delay-300 shadow-[0_0_40px_rgba(236,72,153,0.3)]">
+
+            <!-- Video Player -->
+            <div class="bg-black rounded-xl overflow-hidden flex justify-center w-full">
+                <!-- GANTI src dengan nama file video aslimu -->
+                <!-- Atribut "controls" agar bisa di-play/pause -->
+                <video class="w-full h-auto max-h-[70vh] object-cover" controls>
+                    <source src="./asets/video_3.mp4" type="video/mp4">
+                    Maaf, browsermu tidak mendukung pemutar video.
+                </video>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="section-surat"
+        class="relative w-full min-h-screen flex flex-col items-center justify-center px-6 py-20 z-10">
+
+        <h2 class="font-['Playfair_Display'] text-white text-3xl md:text-5xl italic mb-16 text-center cursor-default">
+            <span
+                class="inline-block transition-all duration-300 hover:text-pink-400 hover:scale-125 hover:-translate-y-1">Pesan</span>
+            <span
+                class="inline-block transition-all duration-300 hover:text-pink-400 hover:scale-125 hover:-translate-y-1">Untuk</span>
+            <span
+                class="inline-block transition-all duration-300 hover:text-pink-400 hover:scale-125 hover:-translate-y-1">Asfa..!</span>
+        </h2>
+
+        <!-- WADAH AMPLOP (Bisa di-klik) -->
+        <div class="relative w-80 md:w-96 h-56 bg-pink-800 rounded-b-lg shadow-[0_10px_30px_rgba(236,72,153,0.3)] cursor-pointer transition-transform duration-500 hover:scale-105"
+            onclick="bukaSurat()">
+
+            <div id="kertas-surat"
+                class="absolute bottom-0 left-2 right-2 h-48 bg-[#fffdf8] rounded-t-md p-6 text-center shadow-inner transition-all duration-1000 ease-in-out z-0 flex flex-col items-center justify-center">
+                <p class="font-['Playfair_Display'] text-gray-800 text-sm md:text-base italic">"Ada sesuatu untukmu..."
+                </p>
+                <p class="text-xs text-pink-500 mt-2 font-sans animate-pulse">(Klik untuk membuka)</p>
+            </div>
+
+            <div class="absolute inset-0 bg-pink-600 rounded-b-lg z-10 flex items-center justify-center pointer-events-none"
+                style="clip-path: polygon(0 0, 50% 50%, 100% 0, 100% 100%, 0 100%);">
+                <i class="fa-solid fa-heart text-red-500 text-3xl mt-12 drop-shadow-md"></i>
+            </div>
+
+            <div id="tutup-amplop"
+                class="absolute top-0 left-0 w-full h-full bg-pink-700 z-20 origin-top transition-transform duration-700 ease-in-out pointer-events-none"
+                style="clip-path: polygon(0 0, 100% 0, 50% 50%);"></div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- POPUP FORM WHATSAPP (Di luar section dengan Z-Index super tinggi) -->
+    <!-- ========================================== -->
+    <div id="surat-terbuka"
+        class="fixed inset-0 z-[9999] flex items-center justify-center px-4 bg-black/80 opacity-0 pointer-events-none transition-opacity duration-500 hidden">
+
+        <div id="isi-surat-modal"
+            class="relative w-full max-w-2xl bg-[#fffdf8] p-8 md:p-12 rounded-lg shadow-[0_0_40px_rgba(236,72,153,0.5)] transform scale-90 transition-transform duration-500">
+
+            <button onclick="tutupSurat()"
+                class="absolute top-4 right-4 text-gray-400 hover:text-red-500 text-3xl transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="flex flex-col items-center text-center">
+                <h3 class="font-['Playfair_Display'] text-2xl md:text-3xl text-pink-600 font-bold mb-2">Tuliskan
+                    Sesuatu...</h3>
+                <p class="text-gray-600 mb-6 text-sm md:text-base">Tuliskan pesan, kesan, atau harapanmu untuk hubungan
+                    kita ke depannya.</p>
+
+                <textarea id="pesan-balasan" rows="6"
+                    class="w-full p-4 border-2 border-pink-200 rounded-lg focus:outline-none focus:border-pink-500 bg-transparent font-['Playfair_Display'] text-gray-800 text-lg resize-none shadow-inner"
+                    placeholder="Ketik pesanmu di sini sayang..."></textarea>
+
+                <button onclick="kirimKeWA()"
+                    class="mt-8 px-8 py-3 bg-pink-500 text-white text-lg font-bold rounded-full hover:bg-pink-600 transition hover:scale-105 shadow-lg flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i> Kirim Pesan
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/animasi.js"></script>
+</body>
+
+</html>
