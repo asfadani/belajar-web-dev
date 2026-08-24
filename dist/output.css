@@ -866,6 +866,14 @@ video {
   margin-top: 2rem;
 }
 
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mt-7 {
+  margin-top: 1.75rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -963,6 +971,18 @@ video {
 
 .hidden {
   display: none;
+}
+
+.aspect-\[\] {
+  aspect-ratio: ;
+}
+
+.aspect-\[3\] {
+  aspect-ratio: 3;
+}
+
+.aspect-\[3\/2\] {
+  aspect-ratio: 3/2;
 }
 
 .h-10 {
@@ -1131,6 +1151,14 @@ video {
 
 .flex-1 {
   flex: 1 1 0%;
+}
+
+.flex-\[\] {
+  flex: ;
+}
+
+.flex-\[7\] {
+  flex: 7;
 }
 
 .flex-shrink {
@@ -2746,6 +2774,34 @@ video {
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
+.font-\[\] {
+  font-family: ;
+}
+
+.font-\[\'\'\] {
+  font-family: '';
+}
+
+.font-\[\'I\'\] {
+  font-family: 'I';
+}
+
+.font-\[\'Indie\'\] {
+  font-family: 'Indie';
+}
+
+.font-\[\'Indie_\'\] {
+  font-family: 'Indie ';
+}
+
+.font-\[\'Indie_F\'\] {
+  font-family: 'Indie F';
+}
+
+.font-\[\'Indie_Flower\'\] {
+  font-family: 'Indie Flower';
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -2906,11 +2962,6 @@ video {
 .text-blue-600 {
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity, 1));
-}
-
-.text-blue-800 {
-  --tw-text-opacity: 1;
-  color: rgb(30 64 175 / var(--tw-text-opacity, 1));
 }
 
 .text-gray-200 {
@@ -4045,8 +4096,24 @@ a:hover {
   content: var(--tw-content);
 }
 
+.hover\:aspect-\[7\]:hover {
+  aspect-ratio: 7;
+}
+
+.hover\:aspect-\[3\/2\]:hover {
+  aspect-ratio: 3/2;
+}
+
 .hover\:flex-\[7\]:hover {
   flex: 7;
+}
+
+.hover\:flex-\[3\]:hover {
+  flex: 3;
+}
+
+.hover\:flex-\[4\]:hover {
+  flex: 4;
 }
 
 .hover\:-translate-y-1:hover {
@@ -4311,6 +4378,18 @@ a:hover {
   .md\:blur-\[120px\] {
     --tw-blur: blur(120px);
     filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  }
+
+  .md\:hover\:flex:hover {
+    display: flex;
+  }
+
+  .md\:hover\:flex-\[\]:hover {
+    flex: ;
+  }
+
+  .md\:hover\:flex-\[5\]:hover {
+    flex: 5;
   }
 }
 
